@@ -16,7 +16,7 @@ public class PaymentConfig {
         this(baseUrl,merchantId,clientId,storeId,securityToken,userId,30);
     }
     public PaymentConfig(int merchantId,int clientId,String storeId,String securityToken,String userId){
-        this("https://api.pinelabs.com/",merchantId,clientId,storeId,securityToken,userId,30);
+        this("https://e77f0b9ae771.ngrok-free.app/",merchantId,clientId,storeId,securityToken,userId,30);
     }
     public String getBaseUrl(){
         return baseUrl;

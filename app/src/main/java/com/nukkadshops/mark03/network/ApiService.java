@@ -13,7 +13,7 @@ public interface ApiService {
     @POST("api/status")
     Call<StatusResponse> statusResponseCall(@Body StatusRequest request);
 
-    @POST("api/forceCancel")
+    @POST("api/force-cancel")
     Call<CancelResponse> cancelResponseCall(@Body CancelRequest request);
 
     @POST("api/void")

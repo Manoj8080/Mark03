@@ -1,22 +1,23 @@
 package com.nukkadshops.mark03.repository;
 
 import com.nukkadshops.mark03.network.ApiClient;
+import com.nukkadshops.mark03.models.*;
 import com.nukkadshops.mark03.network.ApiService;
+import retrofit2.Callback;
 import com.nukkadshops.mark03.sdk.PaymentConfig;
 public class PaymentRepository {
     ApiService apiService;
 
     public PaymentRepository(PaymentConfig config) {
-        ;
         apiService = ApiClient.getClient(config).create(ApiService.class);
     }
 
-    public void upload(UploadRequest request, Callback<Upload>callback) {
+    public void upload(UploadRequest request, Callback<UploadResponse>callback) {
         apiService.uploadResponseCall(request).enqueue(callback);
     }
 
-    public void status(StatusRequest request, Callback<StatusResponse> callback) {
-        apiService.statusResponseCall(request).enqueue(callback);
+    public void status(StatusRequest requests, Callback<StatusResponse> callback) {
+        apiService.statusResponseCall(requests).enqueue(callback);
     }
 
     public void cancel(CancelRequest request, Callback<CancelResponse> callback) {
